@@ -4,6 +4,7 @@ import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Login from "./components/Login";
 import AdminDashboard from "./components/AdminDashboard";
 import IPTVGenerator from "./components/IPTVGenerator";
+import VPNProxy from "./components/VPNProxy";
 import "./App.css";
 
 // Protected Route Component
