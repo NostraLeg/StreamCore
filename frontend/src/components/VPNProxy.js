@@ -307,9 +307,9 @@ const VPNProxy = () => {
           <div>
             <h1 className="text-3xl font-bold flex items-center space-x-3">
               <Shield className="text-blue-500" />
-              <span>VPN & Proxy</span>
+              <span>Network Security</span>
             </h1>
-            <p className="text-gray-400 mt-2">Secure your IPTV streaming with encrypted connections</p>
+            <p className="text-gray-400 mt-2">Professional network protection and privacy solutions</p>
           </div>
           
           <div className="flex items-center space-x-4">
