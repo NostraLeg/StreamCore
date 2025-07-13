@@ -327,9 +327,15 @@ class SecureIPTVTester:
         
         # Test M3U8 playlist generation
         access_code = self.test_data["test_access_code"]
-        result = self.make_request("GET", f"/playlist/{access_code}/m3u8")
+        result = self.make_request("GET", f"/playlist/{access_code}/m3u8", expect_json=False)
         if result["success"]:
             self.log("✅ M3U8 playlist generation successful")
+            # Check if content looks like M3U8
+            content = result["data"].get("content", "")
+            if "#EXTM3U" in content:
+                self.log("✅ M3U8 content format is correct")
+            else:
+                self.log("❌ M3U8 content format is incorrect", "ERROR")
         else:
             self.log(f"❌ M3U8 playlist generation failed: {result['data']}", "ERROR")
             return False
