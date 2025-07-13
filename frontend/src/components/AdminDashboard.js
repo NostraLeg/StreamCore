@@ -178,8 +178,8 @@ const AdminDashboard = () => {
       <div className="bg-gray-800 border-b border-gray-700 p-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold">🎬 IPTV Admin Dashboard</h1>
-            <p className="text-gray-400">Secure IPTV Management System</p>
+            <h1 className="text-3xl font-bold">⚡ Control Panel</h1>
+            <p className="text-gray-400">StreamCore Management System</p>
           </div>
           <div className="flex items-center space-x-4">
             <div className="bg-green-600 text-white px-3 py-1 rounded text-sm">
