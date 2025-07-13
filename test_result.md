@@ -257,7 +257,15 @@ metadata:
 
 test_plan:
   current_focus:
-    - "All backend API endpoints tested and verified"
+    - "Authentication System - Login Page"
+    - "Authentication System - Registration"
+    - "Authentication System - Logout"
+    - "Role-Based Navigation Access"
+    - "IPTV Generator - Channels Listing"
+    - "IPTV Generator - Add New Channels"
+    - "IPTV Generator - Playlist Creation"
+    - "Admin Dashboard - Access Control"
+    - "Security - Unauthorized Access Redirects"
   stuck_tasks: []
   test_all: true
   test_priority: "high_first"
