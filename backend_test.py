@@ -389,10 +389,9 @@ class SecureIPTVTester:
         
         # Test role updates (if we have a test user)
         if "testuser_id" in self.test_data:
-            # Send role as request body with proper enum value
-            role_data = {"new_role": "admin"}  # Send as dict with proper key
+            # Send role as direct string value (FastAPI will parse it as UserRole enum)
             result = self.make_request("PUT", f"/admin/users/{self.test_data['testuser_id']}/role", 
-                                     role_data, auth_token=self.tokens.get("admin"))
+                                     "admin", auth_token=self.tokens.get("admin"))
             if result["success"]:
                 self.log("✅ User role update successful")
                 return True
