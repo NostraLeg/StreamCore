@@ -60,6 +60,12 @@ const AppLayout = () => {
               >
                 IPTV Generator
               </a>
+              <a 
+                href="/vpn" 
+                className="text-gray-300 hover:text-white px-3 py-2 rounded transition-colors"
+              >
+                VPN & Proxy
+              </a>
               {user?.role === 'admin' && (
                 <a 
                   href="/admin" 
