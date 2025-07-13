@@ -11,7 +11,8 @@ import {
   Link,
   Shield,
   Clock,
-  Users
+  Users,
+  List
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import VideoPlayer from './VideoPlayer';
