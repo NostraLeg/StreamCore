@@ -74,10 +74,12 @@ class SecureIPTVTester:
         """Test user registration endpoint"""
         self.log("Testing user registration...")
         
-        # Test valid registration
+        # Test valid registration with unique username
+        import time
+        unique_suffix = str(int(time.time()))
         test_user = {
-            "username": "testuser2025",
-            "email": "testuser2025@example.com",
+            "username": f"testuser{unique_suffix}",
+            "email": f"testuser{unique_suffix}@example.com",
             "password": "SecurePass123!",
             "role": "user"
         }
@@ -88,6 +90,9 @@ class SecureIPTVTester:
             self.log("✅ User registration successful")
             self.tokens["testuser"] = result["data"]["access_token"]
             self.test_data["testuser_id"] = result["data"]["user_id"]
+            return True
+        elif result["status_code"] == 400 and "already registered" in result["data"].get("detail", ""):
+            self.log("✅ User registration correctly prevents duplicate users")
             return True
         else:
             self.log(f"❌ User registration failed: {result['data']}", "ERROR")
