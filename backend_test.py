@@ -24,7 +24,7 @@ class SecureIPTVTester:
         print(f"[{timestamp}] [{level}] {message}")
     
     def make_request(self, method: str, endpoint: str, data: Dict = None, 
-                    headers: Dict = None, auth_token: str = None) -> Dict[str, Any]:
+                    headers: Dict = None, auth_token: str = None, expect_json: bool = True) -> Dict[str, Any]:
         """Make HTTP request with proper error handling"""
         url = f"{self.api_base}{endpoint}"
         
@@ -47,9 +47,18 @@ class SecureIPTVTester:
             else:
                 raise ValueError(f"Unsupported HTTP method: {method}")
             
+            # Handle different response types
+            if expect_json:
+                try:
+                    response_data = response.json() if response.content else {}
+                except json.JSONDecodeError:
+                    response_data = {"error": "Invalid JSON response", "content": response.text}
+            else:
+                response_data = {"content": response.text}
+            
             return {
                 "status_code": response.status_code,
-                "data": response.json() if response.content else {},
+                "data": response_data,
                 "headers": dict(response.headers),
                 "success": 200 <= response.status_code < 300
             }
@@ -58,13 +67,6 @@ class SecureIPTVTester:
                 "status_code": 0,
                 "data": {"error": str(e)},
                 "headers": {},
-                "success": False
-            }
-        except json.JSONDecodeError:
-            return {
-                "status_code": response.status_code,
-                "data": {"error": "Invalid JSON response", "content": response.text},
-                "headers": dict(response.headers),
                 "success": False
             }
     
