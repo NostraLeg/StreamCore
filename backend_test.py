@@ -376,9 +376,9 @@ class SecureIPTVTester:
         
         # Test role updates (if we have a test user)
         if "testuser_id" in self.test_data:
-            role_update_data = "admin"  # New role
-            result = self.make_request("PUT", f"/admin/users/{self.test_data['testuser_id']}/role", 
-                                     role_update_data, auth_token=self.tokens.get("admin"))
+            # Use query parameter for role update
+            url = f"/admin/users/{self.test_data['testuser_id']}/role?new_role=admin"
+            result = self.make_request("PUT", url, auth_token=self.tokens.get("admin"))
             if result["success"]:
                 self.log("✅ User role update successful")
                 return True
