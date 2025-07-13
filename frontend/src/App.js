@@ -112,6 +112,14 @@ const AppLayout = () => {
             } 
           />
           <Route 
+            path="/vpn" 
+            element={
+              <ProtectedRoute>
+                <VPNProxy />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
             path="/admin" 
             element={
               <ProtectedRoute requiredRole="admin">
