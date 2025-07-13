@@ -27,6 +27,14 @@ db = client[os.environ['DB_NAME']]
 
 # Initialize services
 iptv_generator = IPTVGenerator(os.environ.get('REACT_APP_BACKEND_URL', 'http://localhost:8001'))
+stream_proxy = StreamProxy()
+
+# Create the main app without a prefix
+app = FastAPI(title="Secure IPTV Manager", version="1.0.0")
+
+# Create a router with the /api prefix
+api_router = APIRouter(prefix="/api")
+
 # =======================
 # AUTHENTICATION ROUTES
 # =======================
