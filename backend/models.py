@@ -141,3 +141,7 @@ class Token(BaseModel):
     expires_in: int
     user_id: str
     role: UserRole
+
+# Role Update Model
+class RoleUpdate(BaseModel):
+    new_role: UserRole
