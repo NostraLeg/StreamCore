@@ -50,11 +50,15 @@ const Login = () => {
       <div className="w-full max-w-md">
         {/* Logo/Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4">
-            <Shield className="w-8 h-8 text-white" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-800 rounded-full mb-4 border-2 border-gray-600">
+            <div className="w-8 h-8 relative">
+              {/* Minimalist interlocking circles logo */}
+              <div className="absolute w-5 h-5 border-2 border-gray-300 rounded-full top-0 left-0"></div>
+              <div className="absolute w-5 h-5 border-2 border-gray-400 rounded-full top-1 left-2"></div>
+            </div>
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">Secure IPTV</h1>
-          <p className="text-gray-400">Professional IPTV Management System</p>
+          <h1 className="text-3xl font-bold text-white mb-2">StreamCore</h1>
+          <p className="text-gray-400">Professional Media Management</p>
         </div>
 
         {/* Login/Register Form */}
@@ -207,11 +211,11 @@ const Login = () => {
 
           {/* Demo Credentials */}
           <div className="mt-4 p-4 bg-gray-700 rounded-lg">
-            <p className="text-gray-300 text-sm font-medium mb-2">Demo Credentials:</p>
+            <p className="text-gray-300 text-sm font-medium mb-2">Demo Access:</p>
             <div className="text-xs text-gray-400 space-y-1">
-              <p>Admin: admin / admin123</p>
-              <p>User: user / user123</p>
-              <p>Viewer: viewer / viewer123</p>
+              <p>Administrator: admin / admin123</p>
+              <p>Manager: user / user123</p>
+              <p>Guest: viewer / viewer123</p>
             </div>
           </div>
         </div>
@@ -220,7 +224,7 @@ const Login = () => {
         <div className="mt-6 text-center">
           <div className="flex items-center justify-center space-x-2 text-green-400 text-sm">
             <Shield className="w-4 h-4" />
-            <span>End-to-end encrypted • VPN protected</span>
+            <span>Enterprise security • Encrypted connections</span>
           </div>
         </div>
       </div>

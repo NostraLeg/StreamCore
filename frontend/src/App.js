@@ -51,27 +51,34 @@ const AppLayout = () => {
       <nav className="bg-gray-800 border-b border-gray-700 px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-6">
-            <h1 className="text-2xl font-bold text-white">🎬 Secure IPTV</h1>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 relative">
+                {/* Minimalist logo */}
+                <div className="absolute w-5 h-5 border-2 border-gray-300 rounded-full top-0 left-0"></div>
+                <div className="absolute w-5 h-5 border-2 border-gray-400 rounded-full top-1 left-2"></div>
+              </div>
+              <h1 className="text-2xl font-bold text-white">StreamCore</h1>
+            </div>
             
             <div className="flex space-x-4">
               <a 
                 href="/generator" 
                 className="text-gray-300 hover:text-white px-3 py-2 rounded transition-colors"
               >
-                IPTV Generator
+                Media Manager
               </a>
               <a 
                 href="/vpn" 
                 className="text-gray-300 hover:text-white px-3 py-2 rounded transition-colors"
               >
-                VPN & Proxy
+                Network Security
               </a>
               {user?.role === 'admin' && (
                 <a 
                   href="/admin" 
                   className="text-gray-300 hover:text-white px-3 py-2 rounded transition-colors"
                 >
-                  Admin Dashboard
+                  Control Panel
                 </a>
               )}
             </div>

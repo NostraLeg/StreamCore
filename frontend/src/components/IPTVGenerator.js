@@ -359,8 +359,8 @@ const IPTVGenerator = () => {
       <div className="bg-gray-800 border-b border-gray-700 p-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold">🎬 IPTV Generator</h1>
-            <p className="text-gray-400">Create and manage secure IPTV playlists</p>
+            <h1 className="text-3xl font-bold">📺 Media Manager</h1>
+            <p className="text-gray-400">Professional content management and distribution</p>
           </div>
           <div className="flex items-center space-x-3">
             <div className="bg-green-600 text-white px-3 py-1 rounded text-sm flex items-center space-x-1">
@@ -374,7 +374,7 @@ const IPTVGenerator = () => {
         <div className="flex space-x-6 mt-6">
           {[
             { id: 'channels', label: 'Channels', icon: Play },
-            { id: 'playlists', label: 'Playlists', icon: List },
+            { id: 'playlists', label: 'Collections', icon: List },
             { id: 'codes', label: 'Access Codes', icon: Link }
           ].map(tab => (
             <button
@@ -399,7 +399,7 @@ const IPTVGenerator = () => {
         {activeTab === 'channels' && (
           <div>
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold">IPTV Channels ({channels.length})</h2>
+              <h2 className="text-2xl font-bold">Media Channels ({channels.length})</h2>
               <button
                 onClick={() => setShowAddChannel(true)}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2"
@@ -480,7 +480,7 @@ const IPTVGenerator = () => {
                   onClick={() => setShowCreatePlaylist(true)}
                   className="bg-white text-blue-600 px-4 py-2 rounded font-semibold hover:bg-gray-100"
                 >
-                  Create Playlist
+                  Create Collection
                 </button>
               </div>
             )}
@@ -491,7 +491,7 @@ const IPTVGenerator = () => {
         {activeTab === 'playlists' && (
           <div>
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold">My Playlists ({playlists.length})</h2>
+              <h2 className="text-2xl font-bold">Media Collections ({playlists.length})</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
